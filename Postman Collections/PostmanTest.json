@@ -73,11 +73,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}api/users?page=1",
+					"raw": "{{baseUrl}}/api/users?page=1",
 					"host": [
-						"{{baseUrl}}api"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"api",
 						"users"
 					],
 					"query": [
@@ -95,7 +96,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "adcc829d-ba4a-4f67-9a83-2290e17d1ef9",
+				"id": "351d6822-4d90-48bc-b560-f6a4a16d4d82",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -106,7 +107,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d31d5c29-87a2-409a-8f49-393b0842ac97",
+				"id": "7734178b-9122-4c77-beaf-97b8d4659cf5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -118,7 +119,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://reqres.in/",
+			"value": "https://reqres.in",
 			"type": "string"
 		}
 	]
