@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "8e159545-4a62-4553-8194-d244c76bd993",
+		"name": "List of users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "657736b7-d4f8-4511-a553-ac2eab86de1e",
+						"exec": [
+							"console.clear();"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb083ce3-d116-48f7-9bd1-52d934daa6dc",
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"getStatus200 = function() {\r",
+							"\tpm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							"\r",
+							"assertDataId = function () {\r",
+							"\tpm.expect(response.id).to.a('number')};\r",
+							"\r",
+							"pageIsNumber = function () {\r",
+							"\tpm.expect(response.page).to.be.a('number');\r",
+							"}\r",
+							"\r",
+							"GetUsersPage1 = function () {\r",
+							"\tpm.expect(response.page).to.be.eql(1);\r",
+							"}\r",
+							"\r",
+							"//Tests\r",
+							"pm.test(\"Status 200\", {getStatus200})\r",
+							"pm.test (\"Get users page 1\", {GetUsersPage1})\r",
+							"pm.test(\"Page is number\"), {pageIsNumber};\r",
+							"pm.test(\"Assert ID\", {assertDataId});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "63e1512f-fe39-4292-a9e1-543e7c4b6dfe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/users?page=1",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "adcc829d-ba4a-4f67-9a83-2290e17d1ef9",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d31d5c29-87a2-409a-8f49-393b0842ac97",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://reqres.in/",
+			"type": "string"
+		}
+	]
+}
