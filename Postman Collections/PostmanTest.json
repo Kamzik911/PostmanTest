@@ -109,7 +109,20 @@
 					"script": {
 						"id": "607d35dd-8339-4d11-95d8-ca4319887850",
 						"exec": [
-							"const response = pm.response.json();"
+							"response = pm.response.json();\r",
+							"\r",
+							"getStatus200 = function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"}\r",
+							"\r",
+							"DataIdIsNumber = function() {\r",
+							"    pm.expect(response.id).to.be.a('number');\r",
+							"}\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Get status 200\", {getStatus200});\r",
+							"pm.test(\"Id is number\", {DataIdIsNumber});"
 						],
 						"type": "text/javascript",
 						"packages": {}
