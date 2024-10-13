@@ -110,27 +110,46 @@
 						"id": "607d35dd-8339-4d11-95d8-ca4319887850",
 						"exec": [
 							"response = pm.response.json();\r",
+							"getNumber = pm.collectionVariables.get('UserId');\r",
 							"\r",
-							"getStatus200 = function() {\r",
+							"getStatus200 = function(){\r",
 							"    pm.response.to.have.status(200);\r",
 							"}\r",
 							"\r",
-							"dataIdIsNumber = function() {\r",
+							"dataIdIsNumber = function(){\r",
 							"    pm.expect(response.id).to.be.a('number');\r",
 							"}\r",
 							"\r",
-							"emailHaveAtSign = function() {\r",
-							"    pm.expect(response.email).to.include('@');    \r",
+							"let emailHaveAtSign = function(){\r",
+							"    pm.expect(response.email).to.include('@');\r",
 							"}\r",
+							"\r",
 							"emailHaveString = function(){\r",
 							"    pm.expect(response.email).to.have.a('string');\r",
 							"}\r",
 							"\r",
+							"first_nameIsString = function(){\r",
+							"    pm.expect(response.first_name).to.have.a('string');\r",
+							"}\r",
 							"\r",
-							"pm.test(\"Get status 200\", {getStatus200});\r",
+							"last_nameIsString = function(){\r",
+							"    pm.expect(response.last_name).to.have.a('string');\r",
+							"}\r",
+							"\r",
+							"avatarHaveHttps = function(){\r",
+							"    pm.expect(response.avatar).to.include('http');\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Id is number\", function(){\r",
+							"    pm.expect(response.id).to.be.a(parseInt('number'))});\r",
+							"\r",
+							"pm.test(\"Get status 200\", getStatus200);\r",
 							"pm.test(\"Id is number\", {dataIdIsNumber});\r",
-							"pm.test(\"First_name include @\", {emailHaveAtSign});\r",
-							"pm.test(\"First_name is string\", {emailHaveString});"
+							"pm.test(\"Email include @\", emailHaveAtSign);\r",
+							"pm.test(\"Email is string\", emailHaveString);\r",
+							"pm.test(\"First_name is string\", first_nameIsString);\r",
+							"pm.test(\"First_name is string\", last_nameIsString);\r",
+							"pm.test(\"Avatar include https\", avatarHaveHttps);"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -153,7 +172,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "999b3a62-e646-480f-a08b-27664346d545",
+				"id": "15112ba1-0041-460f-9951-f09a3ecf2b0e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -164,7 +183,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2f354e72-7123-4512-965a-9ca1a7d30ee5",
+				"id": "7552a51c-869d-4c9f-9ca7-142166e2d322",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -177,6 +196,11 @@
 		{
 			"key": "baseUrl",
 			"value": "https://reqres.in/",
+			"type": "string"
+		},
+		{
+			"key": "UserId",
+			"value": "",
 			"type": "string"
 		}
 	]
