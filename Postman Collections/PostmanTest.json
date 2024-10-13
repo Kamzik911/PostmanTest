@@ -91,7 +91,7 @@
 			"response": []
 		},
 		{
-			"name": "Get user",
+			"name": "Get single user",
 			"event": [
 				{
 					"listen": "prerequest",
