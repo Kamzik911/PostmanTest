@@ -110,7 +110,8 @@
 						"id": "607d35dd-8339-4d11-95d8-ca4319887850",
 						"exec": [
 							"response = pm.response.json();\r",
-							"getNumber = pm.collectionVariables.get('UserId');\r",
+							"getNumber = function (){\r",
+							"    pm.collectionVariables.get(data.id)};\r",
 							"\r",
 							"getStatus200 = function(){\r",
 							"    pm.response.to.have.status(200);\r",
@@ -142,6 +143,8 @@
 							"\r",
 							"pm.test(\"Id is number\", function(){\r",
 							"    pm.expect(response.id).to.be.a(parseInt('number'))});\r",
+							"\r",
+							"getNumber();\r",
 							"\r",
 							"pm.test(\"Get status 200\", getStatus200);\r",
 							"pm.test(\"Id is number\", {dataIdIsNumber});\r",
@@ -202,6 +205,14 @@
 			"key": "UserId",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "2",
+			"value": ""
+		},
+		{
+			"key": "null",
+			"value": ""
 		}
 	]
 }
