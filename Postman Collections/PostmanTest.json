@@ -111,7 +111,7 @@
 						"exec": [
 							"response = pm.response.json();\r",
 							"getNumber = function (){\r",
-							"    pm.collectionVariables.get(data.id)};\r",
+							"    pm.collectionVariables.set('UserId')};\r",
 							"\r",
 							"getStatus200 = function(){\r",
 							"    pm.response.to.have.status(200);\r",
@@ -175,7 +175,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "15112ba1-0041-460f-9951-f09a3ecf2b0e",
+				"id": "fa0089a0-7276-45fd-b488-871f7d4b41b6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -186,7 +186,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7552a51c-869d-4c9f-9ca7-142166e2d322",
+				"id": "7ed2b9ef-80d9-404d-97ec-866298037e27",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -203,15 +203,6 @@
 		},
 		{
 			"key": "UserId",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "2",
-			"value": ""
-		},
-		{
-			"key": "null",
 			"value": ""
 		}
 	]
