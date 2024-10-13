@@ -109,9 +109,10 @@
 					"script": {
 						"id": "607d35dd-8339-4d11-95d8-ca4319887850",
 						"exec": [
-							"response = pm.response.json();\r",
+							"const response = pm.response.json();\r",
+							"\r",
 							"getNumber = function (){\r",
-							"    pm.collectionVariables.set('UserId')};\r",
+							"    pm.collectionVariables.set('UserId', response.data.id)};\r",
 							"\r",
 							"getStatus200 = function(){\r",
 							"    pm.response.to.have.status(200);\r",
@@ -175,7 +176,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fa0089a0-7276-45fd-b488-871f7d4b41b6",
+				"id": "5163d79d-dc88-4675-80eb-27475696dcbf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -186,7 +187,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7ed2b9ef-80d9-404d-97ec-866298037e27",
+				"id": "0adde76c-ea14-47f7-b5bb-1498568bd27e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
