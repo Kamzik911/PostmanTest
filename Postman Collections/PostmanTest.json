@@ -170,13 +170,44 @@
 		},
 		{
 			"name": "Single user not found",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "37d78620-8977-4dda-be25-e08a7e7d17d4",
+						"exec": [
+							"console.clear()"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "06435cd4-5e3c-4dca-a6ea-9536addd8adb",
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"statusIs404 = function() {\r",
+							"    pm.response.to.have.status(404);\r",
+							"}\r",
+							"\r",
+							"pm.test('Status is 404', statusIs404);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "c7684adc-40d7-40d2-97ce-aec32a8e051e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "{{baseUrl}}api/users/23"
 			},
 			"response": []
 		}
