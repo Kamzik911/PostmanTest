@@ -167,6 +167,18 @@
 				"url": "{{baseUrl}}api/users/2"
 			},
 			"response": []
+		},
+		{
+			"name": "Single user not found",
+			"id": "c7684adc-40d7-40d2-97ce-aec32a8e051e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [
