@@ -219,7 +219,7 @@
 					"script": {
 						"id": "24ce5d0c-ac4c-465c-bf30-1cda48f6ecd7",
 						"exec": [
-							""
+							"console.clear();"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -230,7 +230,11 @@
 					"script": {
 						"id": "5ac7d1bf-ac50-42d4-aa4c-a31984fdcc78",
 						"exec": [
-							""
+							"const response = pm.response.json();\r",
+							"\r",
+							"setUserNameVariables = function() {\r",
+							"\tpm.collectionVariables.set('randomFullName', response.name);\r",
+							"}"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -246,32 +250,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\"\r\n}",
+					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\",\r\n\t\"job\": \"{{randomJob}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{baseUrl}}api/users?name=$randomFullName&job=",
-					"host": [
-						"{{baseUrl}}api"
-					],
-					"path": [
-						"users"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "$randomFullName"
-						},
-						{
-							"key": "job",
-							"value": ""
-						}
-					]
-				}
+				"url": "{{baseUrl}}api/users"
 			},
 			"response": []
 		}
