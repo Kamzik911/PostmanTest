@@ -213,6 +213,30 @@
 		},
 		{
 			"name": "Create user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "24ce5d0c-ac4c-465c-bf30-1cda48f6ecd7",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5ac7d1bf-ac50-42d4-aa4c-a31984fdcc78",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "ea998ec0-f324-47e1-80cc-823965579dc4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -222,7 +246,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -230,7 +254,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}api/users?name={{randomFullName}}&job={{randomJob}}",
+					"raw": "{{baseUrl}}api/users?name=$randomFullName&job=",
 					"host": [
 						"{{baseUrl}}api"
 					],
@@ -240,13 +264,11 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "{{randomFullName}}",
-							"type": "text"
+							"value": "$randomFullName"
 						},
 						{
 							"key": "job",
-							"value": "{{randomJob}}",
-							"type": "text"
+							"value": ""
 						}
 					]
 				}
