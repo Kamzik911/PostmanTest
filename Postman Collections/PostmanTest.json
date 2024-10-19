@@ -233,9 +233,15 @@
 							"const response = pm.response.json();\r",
 							"\r",
 							"setUserNameVariables = function() {\r",
-							"\tpm.expect(response).to.have.property('name')\r",
 							"\tpm.collectionVariables.set('randomFullName', response.name);\r",
-							"}"
+							"}\r",
+							"\r",
+							"setUserJobVariables = function() {\r",
+							"\tpm.collectionVariables.set('randomJob', response.job);\r",
+							"}\r",
+							"\r",
+							"setUserNameVariables();\r",
+							"setUserJobVariables();"
 						],
 						"type": "text/javascript",
 						"packages": {}
