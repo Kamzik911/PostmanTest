@@ -233,6 +233,7 @@
 							"const response = pm.response.json();\r",
 							"\r",
 							"setUserNameVariables = function() {\r",
+							"\tpm.expect(response).to.have.property('name')\r",
 							"\tpm.collectionVariables.set('randomFullName', response.name);\r",
 							"}"
 						],
