@@ -240,8 +240,13 @@
 							"\tpm.collectionVariables.set('randomJob', response.job);\r",
 							"}\r",
 							"\r",
+							"nameIsString = function() {\r",
+							"\tpm.expect(response.name).to.be.a('string');\r",
+							"}\r",
+							"\r",
 							"pm.test('User name is set to variables', setUserNameVariables);\r",
-							"pm.test('User job is set to variables', setUserJobVariables);"
+							"pm.test('User job is set to variables', setUserJobVariables);\r",
+							"pm.test('User name is a string', nameIsString);"
 						],
 						"type": "text/javascript",
 						"packages": {}
