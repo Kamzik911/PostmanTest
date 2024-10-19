@@ -218,8 +218,38 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users?name={{randomFullName}}&job={{randomJob}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{randomFullName}}",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "{{randomJob}}",
+							"type": "text"
+						}
+					]
+				}
 			},
 			"response": []
 		}
@@ -228,7 +258,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5163d79d-dc88-4675-80eb-27475696dcbf",
+				"id": "8d4dbe8e-fe16-4c63-a669-86befe0ec2d8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -239,7 +269,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0adde76c-ea14-47f7-b5bb-1498568bd27e",
+				"id": "c006d951-a810-4bf7-886c-782c3637adaf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -257,6 +287,16 @@
 		{
 			"key": "UserId",
 			"value": ""
+		},
+		{
+			"key": "randomFullName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "randomJob",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
