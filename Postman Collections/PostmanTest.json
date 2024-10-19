@@ -240,8 +240,8 @@
 							"\tpm.collectionVariables.set('randomJob', response.job);\r",
 							"}\r",
 							"\r",
-							"setUserNameVariables();\r",
-							"setUserJobVariables();"
+							"pm.test('User name is set to variables', setUserNameVariables);\r",
+							"pm.test('User job is set to variables', setUserJobVariables);"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -257,7 +257,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\",\r\n\t\"job\": \"{{randomJob}}\"\r\n}",
+					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\",\r\n\t\"job\": \"{{$randomJobTitle}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
