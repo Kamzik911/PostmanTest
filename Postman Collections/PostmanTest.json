@@ -259,7 +259,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8d4dbe8e-fe16-4c63-a669-86befe0ec2d8",
+				"id": "42a8c0a4-5a23-4973-9cc1-013d26554f1d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -270,7 +270,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c006d951-a810-4bf7-886c-782c3637adaf",
+				"id": "d7e2080b-6a81-4ff5-9a73-ff19803a5733",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -298,6 +298,10 @@
 			"key": "randomJob",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "customerName",
+			"value": ""
 		}
 	]
 }
