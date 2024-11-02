@@ -318,6 +318,10 @@
 		{
 			"key": "customerName",
 			"value": ""
+		},
+		{
+			"key": "{{$randomFullName}}",
+			"value": ""
 		}
 	]
 }
