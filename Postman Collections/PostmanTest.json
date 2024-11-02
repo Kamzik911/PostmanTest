@@ -200,9 +200,7 @@
 					"script": {
 						"id": "24ce5d0c-ac4c-465c-bf30-1cda48f6ecd7",
 						"exec": [
-							"console.clear();\r",
-							"\r",
-							"pm.collectionVariables.set('customerName', pm.collectionVariables.replaceIn('{{$randomFullName}}'));"
+							"pm.collectionVariables.set('customerName', pm.variables.replaceIn('{{$randomFullName}}'));"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -213,12 +211,12 @@
 					"script": {
 						"id": "5ac7d1bf-ac50-42d4-aa4c-a31984fdcc78",
 						"exec": [
-							"const response = pm.response.json();\r",
+							"let response\r",
+							"pm.test('body is json', function() {\r",
+							"    pm.response.to.be.json;\r",
+							"    response = pm.response.json();\r",
 							"\r",
-							"\r",
-							"setUserNameVariable = function() {\r",
-							"    pm.collectionVariables.set('randomFullName', response.name);\r",
-							"}\r",
+							"})\r",
 							"\r",
 							"getUsernameVariable = function() {    \r",
 							"    pm.expect(response.name).to.eql(pm.collectionVariables.get('customerName'));\r",
@@ -236,8 +234,7 @@
 							"  pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
-							"pm.test('User name is set to variables', setUserNameVariable);\r",
-							"pm.test('Assert user name', getUsernameVariable);\r",
+							"pm.test('Get user variable', getUsernameVariable);\r",
 							"pm.test('User job is set to variables', setUserJobVariables);\r",
 							"pm.test('User name is a string', nameIsString);"
 						],
@@ -271,7 +268,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ef1374ae-9320-4218-9019-c9225cf467bd",
+				"id": "1c75b27e-f619-4d1a-8734-5064c15fb289",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -282,7 +279,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "178b68fd-3eae-49b0-aef6-43284ab27a9f",
+				"id": "e139be84-ac25-4d3c-ae23-65351998485f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -302,25 +299,12 @@
 			"value": ""
 		},
 		{
-			"key": "randomFullName",
-			"value": "",
-			"type": "string"
-		},
-		{
 			"key": "randomJob",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"key": "name",
-			"value": ""
-		},
-		{
 			"key": "customerName",
-			"value": ""
-		},
-		{
-			"key": "{{$randomFullName}}",
 			"value": ""
 		}
 	]
