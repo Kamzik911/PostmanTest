@@ -200,7 +200,9 @@
 					"script": {
 						"id": "24ce5d0c-ac4c-465c-bf30-1cda48f6ecd7",
 						"exec": [
-							"console.clear();"
+							"console.clear();\r",
+							"\r",
+							"pm.collectionVariables.set('name', pm.collectionVariables.replaceIn('{{$randomFullName}}'));"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -218,9 +220,8 @@
 							"    pm.collectionVariables.set('randomFullName', response.name);\r",
 							"}\r",
 							"\r",
-							"getUsernameVariable = function() {\r",
-							"    console.log(pm.collectionVariables.replaceIn('{{$randomFullName}}'));\r",
-							"    pm.expect(response.name).to.eql('{{$randomFullName}}');\r",
+							"getUsernameVariable = function() {    \r",
+							"    pm.expect(response.name).to.eql(pm.collectionVariables.get('name'));\r",
 							"}\r",
 							"\r",
 							"setUserJobVariables = function() {\r",
@@ -254,7 +255,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"{{$randomFullName}}\",\r\n\t\"job\": \"{{$randomJobTitle}}\"\r\n}",
+					"raw": "{\r\n\t\"name\": \"{{name}}\",\r\n\t\"job\": \"{{$randomJobTitle}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -309,6 +310,10 @@
 			"key": "randomJob",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "name",
+			"value": ""
 		}
 	]
 }
