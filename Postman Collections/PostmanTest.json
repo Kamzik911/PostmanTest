@@ -213,8 +213,9 @@
 						"exec": [
 							"const response = pm.response.json();\r",
 							"\r",
-							"setUserNameVariables = function() {\r",
-							"\tpm.collectionVariables.set('randomFullName', response.name);\r",
+							"\r",
+							"setUserNameVariable = function() {\r",
+							"    pm.collectionVariables.set('randomFullName', response.name);\r",
 							"}\r",
 							"\r",
 							"setUserJobVariables = function() {\r",
@@ -227,7 +228,11 @@
 							"\r",
 							"pm.test('User name is set to variables', setUserNameVariables);\r",
 							"pm.test('User job is set to variables', setUserJobVariables);\r",
-							"pm.test('User name is a string', nameIsString);"
+							"pm.test('User name is a string', nameIsString);\r",
+							"\r",
+							"pm.test(\"Response status code is 201\", function () {\r",
+							"  pm.response.to.have.status(201);\r",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -259,7 +264,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "42a8c0a4-5a23-4973-9cc1-013d26554f1d",
+				"id": "ef1374ae-9320-4218-9019-c9225cf467bd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -270,7 +275,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d7e2080b-6a81-4ff5-9a73-ff19803a5733",
+				"id": "178b68fd-3eae-49b0-aef6-43284ab27a9f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -298,14 +303,6 @@
 			"key": "randomJob",
 			"value": "",
 			"type": "string"
-		},
-		{
-			"key": "customerName",
-			"value": ""
-		},
-		{
-			"key": "name",
-			"value": ""
 		}
 	]
 }
