@@ -202,7 +202,7 @@
 						"exec": [
 							"console.clear();\r",
 							"\r",
-							"pm.collectionVariables.set('name', pm.collectionVariables.replaceIn('{{$randomFullName}}'));"
+							"pm.collectionVariables.set('customerName', pm.collectionVariables.replaceIn('{{$randomFullName}}'));"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -221,7 +221,7 @@
 							"}\r",
 							"\r",
 							"getUsernameVariable = function() {    \r",
-							"    pm.expect(response.name).to.eql(pm.collectionVariables.get('name'));\r",
+							"    pm.expect(response.name).to.eql(pm.collectionVariables.get('customerName'));\r",
 							"}\r",
 							"\r",
 							"setUserJobVariables = function() {\r",
@@ -255,7 +255,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"{{name}}\",\r\n\t\"job\": \"{{$randomJobTitle}}\"\r\n}",
+					"raw": "{\r\n\t\"name\": \"{{customerName}}\",\r\n\t\"job\": \"{{$randomJobTitle}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -313,6 +313,10 @@
 		},
 		{
 			"key": "name",
+			"value": ""
+		},
+		{
+			"key": "customerName",
 			"value": ""
 		}
 	]
