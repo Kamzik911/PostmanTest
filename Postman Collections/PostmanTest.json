@@ -127,6 +127,7 @@
 							"    pm.expect(response.data.last_name).to.have.a('string');\r",
 							"    pm.expect(response.data.avatar).to.include('https://');\r",
 							"    pm.expect(response.data.avatar).to.be.a('string');\r",
+							"    pm.expect(response.data.amail).to.match(/^[a-z]/);\r",
 							"}\r",
 							"\r",
 							"pm.test(\"Get status 200\", getStatus200);\r",
