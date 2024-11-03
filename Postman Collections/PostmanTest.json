@@ -201,6 +201,7 @@
 					"script": {
 						"id": "24ce5d0c-ac4c-465c-bf30-1cda48f6ecd7",
 						"exec": [
+							"console.clear();\r",
 							"pm.collectionVariables.set('customerName', pm.variables.replaceIn('{{$randomFullName}}'));"
 						],
 						"type": "text/javascript",
